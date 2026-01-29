@@ -1,0 +1,8 @@
+file_format: "1"
+id: mod_cirque
+name: Halcyon Cirque Touchpad
+type: shield
+url: https://splitkb.com
+requires: [vik]
+features:
+  - pointing

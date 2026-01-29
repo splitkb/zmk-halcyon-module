@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HALCYON_TO_PROMICRO
+    def_bool $(shields_list_contains,halcyon_to_promicro)

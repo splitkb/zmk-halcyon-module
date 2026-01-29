@@ -1,0 +1,7 @@
+file_format: "1"
+id: halcyon_to_promicro
+name: Halcyon Promicro adapter Board
+type: shield
+url: https://splitkb.com
+requires: [halcyon_conn]
+exposes: [pro_micro]

@@ -1,0 +1,17 @@
+# Copyright (c) 2020 Pete Johanson
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HALCYON_ELORA
+    bool
+
+config SHIELD_HALCYON_ELORA_LEFT
+    def_bool $(shields_list_contains,halcyon_elora_left)
+    select SHIELD_HALCYON_ELORA
+
+config SHIELD_HALCYON_ELORA_RIGHT
+    def_bool $(shields_list_contains,halcyon_elora_right)
+    select SHIELD_HALCYON_ELORA
+
+config SHIELD_HALCYON_ELORA_DONGLE
+    def_bool $(shields_list_contains,halcyon_elora_dongle)

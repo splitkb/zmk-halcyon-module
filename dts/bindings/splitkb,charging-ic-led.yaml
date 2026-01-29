@@ -1,0 +1,25 @@
+# Copyright (c) 2026 splitkb.com
+# SPDX-License-Identifier: MIT
+
+description: Charging IC stat pin monitoring and LED control
+
+compatible: "splitkb,charging-ic-led"
+
+properties:
+  led:
+    type: phandle
+    required: true
+    description: |
+      GPIOs connected to the charging status LEDs.
+  
+  stat-gpios:
+    type: phandle-array
+    required: true
+    description: |
+      GPIO connected to the charging IC status pin.
+
+  stat_assert_delay_ms:
+    type: int
+    required: true
+    description: |
+      The number of milliseconds between STAT pin pulses

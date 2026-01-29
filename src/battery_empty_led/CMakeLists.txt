@@ -1,0 +1,1 @@
+zephyr_library_sources_ifdef(CONFIG_SPLITKB_BATTERY_EMPTY_LED battery_empty_led.c)

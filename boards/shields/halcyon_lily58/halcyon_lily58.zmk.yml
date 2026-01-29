@@ -1,0 +1,15 @@
+file_format: "1"
+id: halcyon_lily58
+name: splitkb.com Halcyon Lily58
+type: shield
+url: https://splitkb.com/products/halcyon-halcyon_lily58
+requires: [halcyon_conn]
+exposes: [vik]
+features:
+  - keys
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - halcyon_lily58_left
+  - halcyon_lily58_right

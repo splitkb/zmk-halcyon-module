@@ -1,0 +1,28 @@
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MOD_CIRQUE_COMMON
+    def_bool $(shields_list_contains,mod_cirque_common)
+    imply ZMK_POINTING
+    imply ZMK_POINTING_SMOOTH_SCROLLING
+
+config SHIELD_MOD_CIRQUE_CENTRAL
+    def_bool $(shields_list_contains,mod_cirque_central)
+    select SHIELD_MOD_CIRQUE_COMMON
+
+config SHIELD_MOD_CIRQUE_HW_COMMON
+    def_bool $(shields_list_contains,mod_cirque_hw_common)
+    select SHIELD_MOD_CIRQUE_COMMON
+
+config SHIELD_MOD_CIRQUE_HW_LEFT
+    def_bool $(shields_list_contains,mod_cirque_hw_left)
+    select SHIELD_MOD_CIRQUE_HW_COMMON
+
+config SHIELD_MOD_CIRQUE_HW_RIGHT
+    def_bool $(shields_list_contains,mod_cirque_hw_right)
+    select SHIELD_MOD_CIRQUE_HW_COMMON
+    
+config SHIELD_MOD_CIRQUE_CENTRAL_HW
+    def_bool $(shields_list_contains,mod_cirque_central_hw)
+    imply ZMK_POINTING
+    imply ZMK_POINTING_SMOOTH_SCROLLING

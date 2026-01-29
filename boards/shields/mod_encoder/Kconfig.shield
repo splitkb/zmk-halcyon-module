@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MOD_ENCODER
+    bool
+
+config SHIELD_MOD_ENCODER_LEFT
+    def_bool $(shields_list_contains,mod_encoder_left)
+    select SHIELD_MOD_ENCODER
+
+config SHIELD_MOD_ENCODER_RIGHT
+    def_bool $(shields_list_contains,mod_encoder_right)
+    select SHIELD_MOD_ENCODER

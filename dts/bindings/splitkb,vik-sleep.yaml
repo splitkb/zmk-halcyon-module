@@ -1,0 +1,19 @@
+description: VIK connector controlled by ZMK sleep state
+compatible: "splitkb,vik-sleep"
+
+include: base.yaml
+
+properties:
+    control-gpios:
+        type: phandle-array
+        required: false
+        description: The GPIO pin to control
+
+child-binding:
+    properties:
+        output-gpios:
+            type: phandle-array
+            required: false
+        input-gpios:
+            type: phandle-array
+            required: false

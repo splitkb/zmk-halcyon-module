@@ -1,0 +1,8 @@
+file_format: "1"
+id: mod_encoder
+name: Halcyon Rotary Encoder
+type: shield
+url: https://splitkb.com
+requires: [vik]
+features:
+  - encoder

@@ -1,0 +1,1 @@
+zephyr_library_sources_ifdef(CONFIG_SPLITKB_CHARGING_IC_LED charging_ic_led.c)

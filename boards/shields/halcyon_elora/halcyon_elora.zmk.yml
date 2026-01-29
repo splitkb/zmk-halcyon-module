@@ -1,0 +1,15 @@
+file_format: "1"
+id: halcyon_elora
+name: splitkb.com Halcyon Elora
+type: shield
+url: https://splitkb.com/products/halcyon-halcyon_elora
+requires: [halcyon_conn]
+exposes: [vik]
+features:
+  - keys
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - halcyon_elora_left
+  - halcyon_elora_right

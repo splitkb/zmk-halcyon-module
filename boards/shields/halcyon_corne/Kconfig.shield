@@ -1,0 +1,17 @@
+# Copyright (c) 2020 Pete Johanson
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_HALCYON_CORNE
+    bool
+
+config SHIELD_HALCYON_CORNE_LEFT
+    def_bool $(shields_list_contains,halcyon_corne_left)
+    select SHIELD_HALCYON_CORNE
+
+config SHIELD_HALCYON_CORNE_RIGHT
+    def_bool $(shields_list_contains,halcyon_corne_right)
+    select SHIELD_HALCYON_CORNE
+
+config SHIELD_HALCYON_CORNE_DONGLE
+    def_bool $(shields_list_contains,halcyon_corne_dongle)
