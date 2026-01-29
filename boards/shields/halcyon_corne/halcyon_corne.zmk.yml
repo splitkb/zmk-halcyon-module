@@ -1,0 +1,15 @@
+file_format: "1"
+id: halcyon_corne
+name: splitkb.com Halcyon Corne
+type: shield
+url: https://splitkb.com/products/halcyon-halcyon_corne
+requires: [halcyon_conn]
+exposes: [vik]
+features:
+  - keys
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - halcyon_corne_left
+  - halcyon_corne_right

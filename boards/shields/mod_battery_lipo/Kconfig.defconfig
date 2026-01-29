@@ -1,0 +1,4 @@
+
+if SHIELD_MOD_BATTERY_LIPO
+
+endif

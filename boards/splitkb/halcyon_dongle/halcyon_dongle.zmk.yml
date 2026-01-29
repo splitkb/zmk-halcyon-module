@@ -1,0 +1,9 @@
+file_format: "1"
+id: halcyon_dongle
+name: halcyon dongle
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://splitkb.com

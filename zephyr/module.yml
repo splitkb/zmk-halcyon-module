@@ -1,0 +1,5 @@
+name: zmk-component-halcyon
+build:
+  settings:
+    board_root: .
+    dts_root: .
