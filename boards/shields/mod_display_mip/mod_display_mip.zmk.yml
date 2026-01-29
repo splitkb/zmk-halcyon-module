@@ -1,0 +1,8 @@
+file_format: "1"
+id: mod_display_mip
+name: Halcyon MIP Display
+type: shield
+url: https://splitkb.com
+requires: [vik]
+features:
+  - display

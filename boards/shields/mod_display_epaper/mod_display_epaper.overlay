@@ -1,0 +1,86 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+	chosen {
+		zephyr,display = &vik_ssd1680;
+	};
+
+	mipi_dbi_spi0: mipi_dbi_spi0 {
+		compatible = "zephyr,mipi-dbi-spi";
+		reset-gpios = <&vik_conn 3 GPIO_ACTIVE_LOW>;
+		dc-gpios = <&vik_conn 0 GPIO_ACTIVE_HIGH>;
+		spi-dev = <&vik_spi>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		vik_ssd1680: ssd1680@0 {
+			compatible = "solomon,ssd1680";
+			status = "okay";
+			reg = <0>;
+			width = <184>;
+			height = <100>;
+			mipi-max-frequency = <4000000>;
+			mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+			busy-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;
+
+			full {
+				border-waveform = <0x05>;
+			};
+
+			partial {
+				border-waveform = <0x05>;
+				dummy-line = <0x1a>;
+				gate-line-width = <0x08>;
+				vcom = <0x22>;
+				lut = [
+				/* Voltage actions, 12 bytes per row */
+				00 40 00 00 00 00 00 00 00 00 00 00
+				80 80 00 00 00 00 00 00 00 00 00 00
+				40 40 00 00 00 00 00 00 00 00 00 00
+				00 80 00 00 00 00 00 00 00 00 00 00
+				00 00 00 00 00 00 00 00 00 00 00 00
+
+				/* Timing controls, 7 bytes per row */
+				0F 00 00 00 00 00 00
+				01 01 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+				00 00 00 00 00 00 00
+
+				/* Voltage levels, 9 bytes */
+				22 22 22 22 22 22 00 00 00
+				];
+			};
+		};
+	};
+};
+
+&vik_spi {
+	status = "okay";
+	cs-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>;
+};
+
+&vik_sleep {
+    epaper_pins {
+        output-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>,  // CS
+		               <&vik_conn 3 GPIO_ACTIVE_LOW>,  // RESET
+					   <&vik_conn 0 GPIO_ACTIVE_HIGH>; // DC
+        input-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;  // BUSY
+    };
+};
+
+&battery_empty_led {
+	status = "disabled";
+};

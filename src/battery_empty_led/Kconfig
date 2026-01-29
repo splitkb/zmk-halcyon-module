@@ -1,0 +1,9 @@
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+menuconfig SPLITKB_BATTERY_EMPTY_LED
+    bool "Battery Empty LED support"
+    default $(dt_compat_enabled,$(DT_COMPAT_SPLITKB_BATTERY_EMPTY_LED))
+    select ZMK_BATTERY
+    help
+        Enable battery empty LED driver for battery monitoring

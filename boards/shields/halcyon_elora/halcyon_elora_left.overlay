@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "halcyon_elora.dtsi"
+
+/*
+&left_soldered_encoder {
+    status = "okay";
+};
+*/
