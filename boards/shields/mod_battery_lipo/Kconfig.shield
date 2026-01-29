@@ -1,0 +1,5 @@
+# Copyright (c) 2026 Splitkb.com
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MOD_BATTERY_LIPO
+    def_bool $(shields_list_contains,mod_battery_lipo)

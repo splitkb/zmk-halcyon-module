@@ -1,0 +1,37 @@
+# Copyright (c) 2026 splitkb.com
+# SPDX-License-Identifier: MIT
+
+description: Battery empty LED control
+
+compatible: "splitkb,battery-empty-led"
+
+properties:
+  led:
+    type: phandle
+    required: true
+    description: |
+      The LED that is being controlled.
+
+  battery_threshold_percentage:
+    type: int
+    required: true
+    description: |
+      Threshold for when the LED should start blinking on boot. In percentages.
+
+  blink_duration_ms:
+    type: int
+    required: true
+    description: |
+      Duration of LED being on in milliseconds.
+
+  blink_interval_ms:
+    type: int
+    required: true
+    description: |
+      Interval between blinks in milliseconds.
+
+  num_blinks:
+    type: int
+    required: true 
+    description: |
+      Number of blinks.

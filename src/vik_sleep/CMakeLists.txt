@@ -1,0 +1,2 @@
+zephyr_include_directories(${CMAKE_SOURCE_DIR}/include)
+zephyr_library_sources_ifdef(CONFIG_SPLITKB_VIK_SLEEP vik_sleep.c)

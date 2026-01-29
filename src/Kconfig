@@ -1,0 +1,3 @@
+rsource "charging_ic_led/Kconfig"
+rsource "battery_empty_led/Kconfig"
+rsource "vik_sleep/Kconfig"

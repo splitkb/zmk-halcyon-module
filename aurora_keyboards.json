@@ -1,0 +1,106 @@
+{
+  "controllers": [
+    {
+      "name": "halcyon_wireless//zmk",
+      "short_name": "wireless",
+      "type": "wireless"
+    }
+  ],
+
+  "dongles": [
+    {
+      "name": "halcyon_dongle//zmk",
+      "short_name": "dongle"
+    }
+  ],
+
+  "keyboards": [
+    {
+      "name": "kyria_rev3",
+      "short_name": "kyria_rev3",
+      "split": "true",
+      "promicro": "true"
+    },
+    {
+      "name": "splitkb_aurora_corne",
+      "short_name": "aurora_corne",
+      "split": "true",
+      "promicro": "true"
+    },
+    {
+      "name": "splitkb_aurora_sweep",
+      "short_name": "aurora_sweep",
+      "split": "true",
+      "promicro": "true"
+    },
+    {
+      "name": "splitkb_aurora_helix",
+      "short_name": "aurora_helix",
+      "split": "true",
+      "promicro": "true"
+    },
+    {
+      "name": "splitkb_aurora_lily58",
+      "short_name": "aurora_lily58",
+      "split": "true",
+      "promicro": "true"
+    },
+    {
+      "name": "splitkb_aurora_sofle",
+      "short_name": "aurora_sofle",
+      "split": "true",
+      "promicro": "true"
+    }
+  ],
+
+  "battery_modules": [
+    {
+      "name": "mod_battery_coincell",
+      "short_name": "cc",
+      "type": "battery"
+    },
+    {
+      "name": "mod_battery_lipo",
+      "short_name": "lp",
+      "type": "battery"
+    }
+  ],
+
+  "modules": [
+    {
+      "name": "mod_display_epaper",
+      "short_name": "epaper",
+      "type": "display"
+    },
+    {
+      "name": "mod_cirque_central",
+      "short_name": "",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_central_hw",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_hw_left",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_hw_right",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_encoder_left",
+      "short_name": "encoder",
+      "type": "encoder"
+    },
+    {
+      "name": "mod_encoder_right",
+      "short_name": "encoder",
+      "type": "encoder"
+    }
+  ]
+}
