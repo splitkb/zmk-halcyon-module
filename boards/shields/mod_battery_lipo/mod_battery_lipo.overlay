@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    chosen {
+        zmk,battery = &vbatt;
+    };
+};

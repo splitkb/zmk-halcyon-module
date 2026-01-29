@@ -1,0 +1,7 @@
+name: zmk-component-halcyon
+build:
+  depends:
+    - zmk-driver-skb-battery
+    - zmk-driver-vik-sleep
+  settings:
+    board_root: .

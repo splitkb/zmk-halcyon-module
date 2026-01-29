@@ -1,0 +1,7 @@
+board:
+  name: halcyon_dongle
+  vendor: splitkb
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk

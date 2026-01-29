@@ -1,0 +1,59 @@
+/*
+ * Copyright (c) 2021 Peter Johanson
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/ {
+	halcyon_conn: connector {
+		compatible = "splitkb,halcyon-gpio";
+		#gpio-cells = <2>;
+		gpio-map-mask = <0xffffffff 0xffffffc0>;
+		gpio-map-pass-thru = <0 0x3f>;
+		gpio-map
+			= <0 0 &gpio0 19 0>
+			, <1 0 &gpio0 17 0>
+			, <2 0 &gpio0 14 0>
+			, <3 0 &gpio0 11 0>
+			, <4 0 &gpio1 0 0>
+			, <5 0 &gpio0 15 0>
+			, <6 0 &gpio1 8 0>
+			, <7 0 &gpio0 12 0>
+			, <8 0 &gpio1 9 0>
+			, <9 0 &gpio0 8 0>
+			, <10 0 &gpio1 11 0>
+			, <11 0 &gpio1 13 0>
+			, <12 0 &gpio1 14 0>
+			, <13 0 &gpio1 10 0>
+			, <14 0 &gpio1 12 0>
+			, <15 0 &gpio1 15 0>
+			/* VIK Pins on Halcyon Keyboard */
+			, <16 0 &gpio0 25 0> // SDA
+			, <17 0 &gpio0 24 0> // SCL
+			/* VIK RGB Pin, in theory? */
+			, <18 0 &gpio0 4 0> // GPIO1
+			, <19 0 &gpio0 22 0> // MOSI
+			, <20 0 &gpio0 5 0> // GPIO2
+			, <21 0 &gpio0 13 0> // CS
+			, <22 0 &gpio0 21 0> // MISO
+			, <23 0 &gpio0 20 0> // SCLK
+			/* RGB */
+			, <25 0 &gpio0 27 0>
+			/* TX/RX */
+			, <26 0 &gpio0 6 0>
+			, <27 0 &gpio0 7 0>
+			/* Unused pins */
+			, <29 0 &gpio0 23 0> // NC
+			, <30 0 &gpio0 29 0> // NC
+			, <31 0 &gpio1 3 0> // NC
+			/* Powernet pins */
+			, <32 0 &gpio0 2 0> // RGB enable
+			, <33 0 &gpio0 3 0> // VIK enable
+			;
+	};
+};
+
+halcyon_i2c: &i2c0 {};
+halcyon_spi: &spi0 {};
+halcyon_serial: &uart0 {};

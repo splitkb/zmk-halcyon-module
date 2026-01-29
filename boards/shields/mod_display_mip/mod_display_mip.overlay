@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+	chosen {
+		zephyr,display = &vik_ls0xx;
+	};
+};
+
+&vik_spi {
+    status = "okay";
+    cs-gpios = <&vik_conn 6 GPIO_ACTIVE_HIGH>;
+    
+    vik_ls0xx: ls0xx@0 {
+        compatible = "sharp,ls0xx";
+        spi-max-frequency = <2000000>;
+        extcomin-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;
+        extcomin-frequency = <60>;
+        disp-en-gpios = <&vik_conn 3 GPIO_ACTIVE_HIGH>;
+        reg = <0>;
+        width = <160>;
+        height = <68>;
+    };
+};
+
+&vik_sleep {
+    ls0xx_pins {
+        output-gpios = <&vik_conn 6 GPIO_ACTIVE_HIGH>, // CS
+                       <&vik_conn 5 GPIO_ACTIVE_HIGH>, // EXTCOMIN
+                       <&vik_conn 3 GPIO_ACTIVE_HIGH>; // DISP_EN
+    };
+};

@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackpad_split: trackpad_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackpad_listener: trackpad_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&trackpad_split>;
+    };
+};

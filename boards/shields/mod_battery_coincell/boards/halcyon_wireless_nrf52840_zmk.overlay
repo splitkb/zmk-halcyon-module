@@ -1,0 +1,25 @@
+/ {
+    vbatt: vbatt {
+        compatible = "splitkb,coincell-voltage-divider";
+        io-channels = <&adc 4>; // P0.28
+        output-ohms = <1>;
+        full-ohms = <1>;
+    };
+
+    disabled_pins {
+        compatible = "gpio-leds";
+        voltage_divider_off: off_0 {
+            gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    EXT_POWER {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>, <&halcyon_conn 32 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+};
+
+&orange_led {
+    status = "disabled";
+};

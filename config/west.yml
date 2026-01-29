@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: VeyPatch
+      url-base: https://github.com/VeyPatch
+    - name: zmk-driver-skb-battery
+      url-base: https://github.com/splitkb
+    - name: zmk-driver-vik-sleep
+      url-base: https://github.com/splitkb
+  projects:
+    - name: zmk
+      remote: VeyPatch
+      revision: power_on_sample_delay_us
+      import: app/west.yml
+    - name: zmk-driver-skb-battery
+      remote: zmk-driver-skb-battery
+      revision: main
+    - name: zmk-driver-vik-sleep
+      remote: zmk-driver-vik-sleep
+      revision: main
+  self:
+    path: config

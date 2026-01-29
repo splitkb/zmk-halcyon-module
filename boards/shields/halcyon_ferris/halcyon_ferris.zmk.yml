@@ -1,0 +1,15 @@
+file_format: "1"
+id: halcyon_ferris
+name: splitkb.com Halcyon Ferris
+type: shield
+url: https://splitkb.com/products/halcyon-halcyon_ferris
+requires: [halcyon_conn]
+exposes: [vik]
+features:
+  - keys
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - halcyon_ferris_left
+  - halcyon_ferris_right

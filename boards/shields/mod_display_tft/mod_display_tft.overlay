@@ -1,0 +1,68 @@
+#include <zephyr/dt-bindings/mipi_dbi/mipi_dbi.h>
+
+/ {
+	chosen {
+		zephyr,display = &vik_st7789v;
+		zmk,display-led = &disp_led;
+	};
+
+	mipi_dbi_spi0: mipi_dbi_spi0 {
+		compatible = "zephyr,mipi-dbi-spi";
+		reset-gpios = <&vik_conn 5 GPIO_ACTIVE_LOW>;
+		dc-gpios = <&vik_conn 0 GPIO_ACTIVE_HIGH>;
+		spi-dev = <&vik_spi>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		vik_st7789v: st7789v@0 {
+			compatible = "sitronix,st7789v";
+			reg = <0>;
+			mipi-max-frequency = <20000000>;
+			mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+			ready-time-ms = <40>;
+			width = <135>;
+			height = <240>;
+			x-offset = <52>;
+			y-offset = <40>;
+			vcom = <0x19>;
+			gctrl = <0x35>;
+			vrhs = <0x12>;
+			vdvs = <0x20>;
+			mdac = <0x00>;
+			gamma = <0x01>;
+			colmod = <0x05>;
+			lcm = <0x2c>;
+			porch-param = [0C 0C 00 33 33];
+			cmd2en-param = [5A 69 02 01];
+			pwctrl1-param = [A4 A1];
+			pvgam-param = [D0 04 0D 11 13 2B 3F 54 4C 18 0D 0B 1F 23];
+			nvgam-param = [D0 04 0C 11 13 2C 3F 44 51 2F 1F 1F 20 23];
+			ram-param = [00 F0];
+			rgb-param = [CD 08 14];
+		};
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		disp_led: disp_led {
+			gpios = <&vik_conn 3 GPIO_ACTIVE_HIGH>;
+			label = "Display LED";
+		};
+	};
+};
+
+&vik_spi {
+	status = "okay";
+	cs-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>;
+};
+
+&vik_sleep {
+	st7789v_pins {
+		output-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>,  // CS
+					   <&vik_conn 5 GPIO_ACTIVE_LOW>,  // RESET
+					   <&vik_conn 0 GPIO_ACTIVE_HIGH>, // DC
+					   <&vik_conn 3 GPIO_ACTIVE_HIGH>; // LED
+	};
+};

@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "mod_cirque_common.dtsi"
+
+&trackpad_listener {
+    status = "okay";
+};

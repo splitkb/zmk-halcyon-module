@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/led/led.h>
+
+&halcyon_serial {
+	// Comment out for slower speeds if encountering issues.
+	current-speed = <921600>;
+};
+
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+
+    split_config {
+        compatible = "zmk,wired-split";
+	    device = <&halcyon_serial>;
+    };
+};
+
+&pinctrl {
+    ws2812_pio_default: ws2812_pio_default {
+        group1 {
+            pinmux = <PIO0_P3>;
+        };
+    };
+};
+
+&pio0 {
+    status = "okay";
+
+    pio-ws2812 {
+        compatible = "worldsemi,ws2812-rpi_pico-pio";
+        status = "okay";
+        pinctrl-0 = <&ws2812_pio_default>;
+        pinctrl-names = "default";
+        bit-waveform = <3>, <3>, <4>;
+
+        led_strip: led_strip {
+            status = "okay";
+            gpios = <&halcyon_conn 25 GPIO_ACTIVE_HIGH>; /* GPIO for WS2812 data line */
+            chain-length = <37>;                    /* Number of LEDs */
+            color-mapping = <LED_COLOR_ID_GREEN
+                             LED_COLOR_ID_RED
+                             LED_COLOR_ID_BLUE>;
+            reset-delay = <280>;
+			frequency = <800000>;
+        };
+    };
+};

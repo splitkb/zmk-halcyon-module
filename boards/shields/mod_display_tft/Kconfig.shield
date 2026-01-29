@@ -1,0 +1,10 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_MOD_DISPLAY_TFT
+    def_bool $(shields_list_contains,mod_display_tft)
+    imply ZMK_DISPLAY
+    imply LV_THEME_DEFAULT_DARK
+    imply LV_USE_THEME_DEFAULT
+    # For LED control of backlight pin
+    select LED

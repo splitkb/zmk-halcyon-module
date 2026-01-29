@@ -1,0 +1,95 @@
+{
+  "controllers": [
+    {
+      "name": "halcyon_wireless//zmk",
+      "short_name": "wireless",
+      "type": "wireless"
+    }
+  ],
+
+  "dongles": [
+    {
+      "name": "halcyon_dongle//zmk",
+      "short_name": "dongle"
+    }
+  ],
+
+  "keyboards": [
+    {
+      "name": "halcyon_kyria",
+      "short_name": "kyria",
+      "split": "true"
+    },
+    {
+      "name": "halcyon_corne",
+      "short_name": "corne",
+      "split": "true"
+    },
+    {
+      "name": "halcyon_ferris",
+      "short_name": "ferris",
+      "split": "true"
+    },
+    {
+      "name": "halcyon_elora",
+      "short_name": "elora",
+      "split": "true"
+    },
+    {
+      "name": "halcyon_lily58",
+      "short_name": "lily58",
+      "split": "true"
+    }
+  ],
+
+  "battery_modules": [
+    {
+      "name": "mod_battery_coincell",
+      "short_name": "cc",
+      "type": "battery"
+    },
+    {
+      "name": "mod_battery_lipo",
+      "short_name": "lp",
+      "type": "battery"
+    }
+  ],
+
+  "modules": [
+    {
+      "name": "mod_display_epaper",
+      "short_name": "epaper",
+      "type": "display"
+    },
+    {
+      "name": "mod_cirque_central",
+      "short_name": "",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_central_hw",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_hw_left",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_cirque_hw_right",
+      "short_name": "cirque",
+      "type": "pointing"
+    },
+    {
+      "name": "mod_encoder_left",
+      "short_name": "encoder",
+      "type": "encoder"
+    },
+    {
+      "name": "mod_encoder_right",
+      "short_name": "encoder",
+      "type": "encoder"
+    }
+  ]
+}

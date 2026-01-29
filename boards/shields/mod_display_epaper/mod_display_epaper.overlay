@@ -1,0 +1,54 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/ {
+	chosen {
+		zephyr,display = &vik_ssd1680;
+	};
+
+	mipi_dbi_spi0: mipi_dbi_spi0 {
+		compatible = "zephyr,mipi-dbi-spi";
+		reset-gpios = <&vik_conn 3 GPIO_ACTIVE_LOW>;
+		dc-gpios = <&vik_conn 0 GPIO_ACTIVE_HIGH>;
+		spi-dev = <&vik_spi>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		vik_ssd1680: ssd1680@0 {
+			compatible = "solomon,ssd1680";
+			status = "okay";
+			reg = <0>;
+			width = <184>;
+			height = <100>;
+			mipi-max-frequency = <4000000>;
+			mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+			busy-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;
+
+			full {
+				border-waveform = <0x05>;
+			};
+
+			partial {
+				border-waveform = <0x3c>;
+			};
+		};
+	};
+};
+
+&vik_spi {
+	status = "okay";
+	cs-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>;
+};
+
+&vik_sleep {
+    epaper_pins {
+        output-gpios = <&vik_conn 6 GPIO_ACTIVE_LOW>,  // CS
+		               <&vik_conn 3 GPIO_ACTIVE_LOW>,  // RESET
+					   <&vik_conn 0 GPIO_ACTIVE_HIGH>; // DC
+        input-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;  // BUSY
+    };
+};

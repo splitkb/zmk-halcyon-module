@@ -1,0 +1,21 @@
+/ {
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 6>; // P0.30
+        power-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
+        power-on-sample-delay-us = <50000>;
+        output-ohms = <10000>;
+        full-ohms = <30000>;
+    };
+
+    charging_led_controller {
+        compatible = "splitkb,charging-ic-led";
+        status = "okay";
+        stat-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        led = <&orange_led>; 
+    };
+};
+
+&orange_led {
+    status = "disabled";
+};
