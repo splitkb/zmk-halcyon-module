@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "halcyon_corne.dtsi"
+
+/ {
+    kscan1: kscan_matrix {
+        compatible = "zmk,kscan-gpio-matrix";
+        wakeup-source;
+
+        diode-direction = "col2row";
+        col-gpios
+            = <&halcyon_conn 6 (GPIO_ACTIVE_HIGH)>
+            , <&halcyon_conn 7 (GPIO_ACTIVE_HIGH)>
+            , <&halcyon_conn 2 (GPIO_ACTIVE_HIGH)>
+            , <&halcyon_conn 3 (GPIO_ACTIVE_HIGH)>
+            , <&halcyon_conn 4 (GPIO_ACTIVE_HIGH)>
+            , <&halcyon_conn 5 (GPIO_ACTIVE_HIGH)>
+            ;
+        row-gpios
+            = <&halcyon_conn 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&halcyon_conn 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&halcyon_conn 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&halcyon_conn 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+    };
+};
+
+/*
+&left_soldered_encoder {
+    status = "okay";
+};
+*/

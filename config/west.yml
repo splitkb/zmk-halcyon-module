@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: zmk-driver-charge-led
+      url-base: https://github.com/splitkb
+    - name: zmk-driver-vik-sleep
+      url-base: https://github.com/splitkb
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-driver-charge-led
+      remote: zmk-driver-charge-led
+      revision: main
+    - name: zmk-driver-vik-sleep
+      remote: zmk-driver-vik-sleep
+      revision: main
+  self:
+    path: config

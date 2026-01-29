@@ -1,0 +1,42 @@
+/ {
+    vbatt: vbatt {
+        compatible = "voltage-divider";
+        io-channels = <&adc 6>; // P0.30
+        power-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
+        power-on-sample-delay-us = <50000>;
+        output-ohms = <10000>;
+        full-ohms = <30000>;
+    };
+
+    charging_led_controller {
+        compatible = "splitkb,charging-ic-led";
+        status = "okay";
+        stat-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        led = <&orange_led>; 
+    };
+
+    battery_empty_led: battery_empty_led {
+        compatible = "splitkb,battery-empty-led";
+        status = "okay";
+        led = <&orange_led>; 
+    };
+};
+
+&orange_led {
+    status = "disabled";
+};
+
+&adc {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    status = "okay";
+
+    channel@6 {
+        reg = <6>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 40)>;
+        zephyr,resolution = <12>;
+        zephyr,input-positive = <NRF_SAADC_AIN6>;
+    };
+};

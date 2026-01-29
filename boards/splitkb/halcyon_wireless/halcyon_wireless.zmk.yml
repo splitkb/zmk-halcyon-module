@@ -1,0 +1,10 @@
+file_format: "1"
+id: halcyon_wireless
+name: halcyon wireless
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://splitkb.com
+exposes: [halcyon_conn, halcyon_batt]

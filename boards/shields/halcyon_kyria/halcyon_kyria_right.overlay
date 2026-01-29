@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2023 The ZMK Contributors
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "halcyon_kyria.dtsi"
+
+&default_transform {
+    col-offset = <7>;
+};
+
+/*
+&right_soldered_encoder {
+    status = "okay";
+};
+*/
