@@ -1,0 +1,8 @@
+name: zmk-component-halcyon
+build:
+  depends:
+    - zmk-driver-charge-led
+    - zmk-driver-vik-sleep
+  settings:
+    board_root: .
+    dts_root: .

@@ -1,0 +1,8 @@
+file_format: "1"
+id: mod_battery_coincell
+name: Halcyon Coin Cell Battery Board
+type: shield
+url: https://splitkb.com
+requires: [halcyon_batt]
+features:
+  - battery

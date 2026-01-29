@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+ 
+/ {
+    vbatt: vbatt {
+        compatible = "voltage-divider";
+        io-channels = <&adc 4>; // P0.28
+        power-on-sample-delay-us = <10000>;
+        // The battery percentage is hardcoded for lipo batteries, so we need to adjust the
+        // voltage divider to match the voltage range of a coin cell battery. Coincell is directly
+        // connected to the ADC pin without divider. So we use a 1.4x multiplier.
+        // (4.2V max for lipo -> 3V max for coin cell, 3.45V min for lipo -> 2.46V min for coin cell)
+        output-ohms = <1000000>;
+        full-ohms = <1400000>; 
+    };
+
+    disabled_pins {
+        // Disable lipo voltage divider circuit FET.
+        compatible = "gpio-leds";
+        voltage_divider_off: off_0 {
+            gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
+        };
+    };
+
+    EXT_POWER {
+        // Include orange LED to indicate external power is turned on, as RGB circuit is not powered
+        // when only a coincell battery is used.
+        // EXT_POWER is redefined as we can't override the control-gpios property in the shield overlay.
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>, <&halcyon_conn 32 GPIO_ACTIVE_HIGH>; // orange_led and rgb circuit
+        init-delay-ms = <50>;
+    };
+
+    battery_empty_led: battery_empty_led {
+        compatible = "splitkb,battery-empty-led";
+        status = "okay";
+        battery_threshold_percentage = <20>;
+        blink_duration_ms = <50>;
+        blink_interval_ms = <2000>;
+        num_blinks = <20>;
+        led = <&blue_led>;
+    };
+};
+
+&orange_led {
+    status = "disabled";
+};
+
+&adc {
+    #address-cells = <1>;
+    #size-cells = <0>;
+    status = "okay";
+
+    channel@4 {
+        reg = <4>;
+        zephyr,gain = "ADC_GAIN_1_6";
+        zephyr,reference = "ADC_REF_INTERNAL";
+        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 40)>;
+        zephyr,resolution = <12>;
+        zephyr,input-positive = <NRF_SAADC_AIN4>;
+        zephyr,oversampling = <5>;
+    };
+};
