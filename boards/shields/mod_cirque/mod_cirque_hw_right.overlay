@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2026 Splitkb.com
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "mod_cirque_hw_common.dtsi"
+#include "mod_cirque_common.dtsi"
+
+&trackpad {
+    invert-y;
+};
+
+&trackpad_split {
+    device = <&trackpad>;
+};

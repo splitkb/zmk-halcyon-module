@@ -1,0 +1,9 @@
+file_format: "1"
+id: halcyon_wired
+name: halcyon wired
+type: board
+arch: arm
+outputs:
+  - usb
+url: https://splitkb.com
+exposes: [halcyon_conn]

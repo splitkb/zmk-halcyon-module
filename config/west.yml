@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
+    - name: zmk-driver-skb-battery
+      url-base: https://github.com/splitkb
+    - name: zmk-driver-vik-sleep
+      url-base: https://github.com/splitkb
+  projects:
+    - name: zmk
+      remote: petejohanson
+      revision: split-gatt-discovery-fixes
+      import: app/west.yml
+    - name: zmk-driver-skb-battery
+      remote: zmk-driver-skb-battery
+      revision: main
+    - name: zmk-driver-vik-sleep
+      remote: zmk-driver-vik-sleep
+      revision: main
+  self:
+    path: config
