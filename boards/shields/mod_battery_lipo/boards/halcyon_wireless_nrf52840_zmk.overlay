@@ -14,6 +14,12 @@
         stat-gpios = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         led = <&orange_led>; 
     };
+
+    battery_empty_led: battery_empty_led {
+        compatible = "splitkb,battery-empty-led";
+        status = "okay";
+        led = <&orange_led>; 
+    };
 };
 
 &orange_led {

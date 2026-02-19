@@ -66,3 +66,7 @@
 					   <&vik_conn 3 GPIO_ACTIVE_HIGH>; // LED
 	};
 };
+
+&battery_empty_led {
+	status = "disabled";
+};

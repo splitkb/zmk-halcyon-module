@@ -52,3 +52,7 @@
         input-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;  // BUSY
     };
 };
+
+&battery_empty_led {
+	status = "disabled";
+};
