@@ -18,6 +18,12 @@
         control-gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>, <&halcyon_conn 32 GPIO_ACTIVE_HIGH>;
         init-delay-ms = <50>;
     };
+
+    battery_empty_led: battery_empty_led {
+        compatible = "splitkb,battery-empty-led";
+        status = "okay";
+        led = <&orange_led>; 
+    };
 };
 
 &orange_led {
