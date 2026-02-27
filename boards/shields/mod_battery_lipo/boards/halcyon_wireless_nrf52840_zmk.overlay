@@ -1,6 +1,6 @@
 / {
     vbatt: vbatt {
-        compatible = "zmk,battery-voltage-divider";
+        compatible = "voltage-divider";
         io-channels = <&adc 6>; // P0.30
         power-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
         power-on-sample-delay-us = <50000>;

@@ -1,15 +1,15 @@
 manifest:
   remotes:
-    - name: VeyPatch
-      url-base: https://github.com/VeyPatch
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: zmk-driver-skb-battery
       url-base: https://github.com/splitkb
     - name: zmk-driver-vik-sleep
       url-base: https://github.com/splitkb
   projects:
     - name: zmk
-      remote: VeyPatch
-      revision: power_on_sample_delay_us
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: zmk-driver-skb-battery
       remote: zmk-driver-skb-battery
