@@ -5,7 +5,7 @@
  */
 
 / {
-	halcyon_conn: connector {
+	halcyon_conn: connector_halcyon {
 		compatible = "splitkb,halcyon-gpio";
 		#gpio-cells = <2>;
 		gpio-map-mask = <0xffffffff 0xffffffc0>;
