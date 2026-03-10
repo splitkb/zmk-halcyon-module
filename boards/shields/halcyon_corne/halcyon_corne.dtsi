@@ -19,7 +19,7 @@
 
 / {
     chosen {
-        zmk,kscan = &kscan0;
+        zmk,kscan = &kscan_composite;
         zmk,physical-layout = &splitkb_halcyon_corne;
     };
 
@@ -28,27 +28,27 @@
         status = "disabled";
     };
 
-    kscan0: kscan_composite {
+    kscan_composite: kscan_composite {
         compatible = "zmk,kscan-composite";
         rows = <5>;
         columns = <12>;
         wakeup-source;
 
         matrix {
-            kscan = <&kscan1>;
+            kscan = <&kscan_matrix>;
         };
 
-        direct {
-            kscan = <&kscan2>;
+        direct_layer: direct {
+            kscan = <&kscan_mock>;
             row-offset = <4>;
         };
     };
     
-    kscan2: kscan_direct {
-        compatible = "zmk,kscan-gpio-direct";
-        wakeup-source;
-
-        input-gpios = <&halcyon_conn 29 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // Dummy pin
+    kscan_mock: kscan_mock {
+        compatible = "zmk,kscan-mock";
+        rows = <1>;
+        columns = <1>;
+        events = <0>;
     };
 
     default_transform: keymap_transform_0 {
@@ -65,6 +65,7 @@
         RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)  RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
         RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
                                 RC(3,3) RC(3,4) RC(3,5)  RC(3,6) RC(3,7) RC(3,8)
+
         RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4)                  RC(4,10) RC(4,9) RC(4,8) RC(4,7) RC(4,6)
         >;
     };
@@ -83,24 +84,9 @@
         RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)  RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10)
         RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10)
                         RC(3,3) RC(3,4) RC(3,5)  RC(3,6) RC(3,7) RC(3,8)
+
         RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4)  RC(4,10) RC(4,9) RC(4,8) RC(4,7) RC(4,6)
         >;
-    };
-
-    left_halcyon_encoder: halcyon_encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&halcyon_conn 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&halcyon_conn 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
-        status = "disabled";
-    };
-
-    right_halcyon_encoder: halcyon_encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&halcyon_conn 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&halcyon_conn 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
-        status = "disabled";
     };
     
     left_soldered_encoder: soldered_encoder_left {
@@ -116,6 +102,14 @@
         a-gpios = <&halcyon_conn 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&halcyon_conn 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         steps = <80>;
+        status = "disabled";
+    };
+
+    left_halcyon_encoder: halcyon_encoder_left {
+        status = "disabled";
+    };
+
+    right_halcyon_encoder: halcyon_encoder_right {
         status = "disabled";
     };
 

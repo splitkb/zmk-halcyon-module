@@ -7,6 +7,7 @@
 #include "mod_encoder.overlay"
 
 &right_halcyon_encoder {
+    compatible = "alps,ec11";
     a-gpios = <&vik_conn 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     b-gpios = <&vik_conn 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     status = "okay";

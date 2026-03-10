@@ -8,7 +8,7 @@
 #include "halcyon_lily58.dtsi"
 
 / {
-    kscan1: kscan_matrix {
+    kscan_matrix: kscan_matrix {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
 

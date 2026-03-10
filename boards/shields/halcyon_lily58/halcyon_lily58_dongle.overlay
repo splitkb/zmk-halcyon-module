@@ -40,39 +40,24 @@
         RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)                 RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
         RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,1) RC(4,10) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
                                 RC(4,2) RC(4,3) RC(4,4) RC(4,5) RC(4,6) RC(4,7) RC(4,8) RC(4,9)
+                                
         RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4)                                 RC(5,10) RC(5,9) RC(5,8) RC(5,7) RC(5,6)
         >;
     };
 
     left_halcyon_encoder: halcyon_encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
         status = "disabled";
     };
 
     right_halcyon_encoder: halcyon_encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
         status = "disabled";
     };
     
     left_soldered_encoder: soldered_encoder_left {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
         status = "disabled";
     };
 
     right_soldered_encoder: soldered_encoder_right {
-        compatible = "alps,ec11";
-        a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        b-gpios = <&gpio0 30 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>; // Dummy pin
-        steps = <80>;
         status = "disabled";
     };
 
