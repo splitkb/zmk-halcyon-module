@@ -11,8 +11,6 @@
 
         input-gpios = <&vik_conn 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
-
-    
 };
 
 &direct_layer {

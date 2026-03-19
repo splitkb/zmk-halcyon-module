@@ -7,4 +7,4 @@ outputs:
   - usb
   - ble
 url: https://splitkb.com
-exposes: [halcyon_conn, halcyon_batt]
+exposes: [halcyon_conn, halcyon_batt, pro_micro]
