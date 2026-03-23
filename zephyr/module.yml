@@ -3,5 +3,6 @@ build:
   depends:
     - zmk-driver-charge-led
     - zmk-driver-vik-sleep
+    - cirque-input-module
   settings:
     board_root: .

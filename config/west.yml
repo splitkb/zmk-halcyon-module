@@ -6,16 +6,21 @@ manifest:
       url-base: https://github.com/splitkb
     - name: zmk-driver-vik-sleep
       url-base: https://github.com/splitkb
+    - name: cirque-input-module
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: v0.3
       import: app/west.yml
     - name: zmk-driver-charge-led
       remote: zmk-driver-charge-led
       revision: main
     - name: zmk-driver-vik-sleep
       remote: zmk-driver-vik-sleep
+      revision: main
+    - name: cirque-input-module
+      remote: cirque-input-module
       revision: main
   self:
     path: config
