@@ -45,6 +45,73 @@
             , <10 0 &halcyon_conn 0 0> /* D10/A10 */
             ;
     };
+
+    left_halcyon_encoder: halcyon_encoder_left {
+        status = "disabled";
+    };
+
+    right_halcyon_encoder: halcyon_encoder_right {
+        status = "disabled";
+    };
+
+    kscan_composite: kscan_composite {
+        compatible = "zmk,kscan-composite";
+        wakeup-source;
+
+        matrix {
+            kscan = <&kscan0>;
+        };
+
+        direct_layer: direct {
+            kscan = <&kscan_mock>;
+        };
+    };
+
+    kscan_mock: kscan_mock {
+        compatible = "zmk,kscan-mock";
+        rows = <1>;
+        columns = <1>;
+        events = <0>;
+    };
+
+    chosen {
+        zmk,kscan = &kscan_composite;
+        zmk,underglow = &led_strip;
+    };
+
+    trackpad_listener: trackpad_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        triggers-per-rotation = <20>;
+    };
+
+    
+};
+
+&i2c1 {
+    compatible = "nordic,nrf-twi";
+    pinctrl-0 = <&i2c1_default>;
+    pinctrl-1 = <&i2c1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&spi1 {
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi1_default>;
+    pinctrl-1 = <&spi1_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
+&uart1 {
+    compatible = "nordic,nrf-uarte";
+    current-speed = <115200>;
+    pinctrl-0 = <&uart1_default>;
+    pinctrl-1 = <&uart1_sleep>;
+    pinctrl-names = "default", "sleep";
 };
 
 pro_micro_d: &pro_micro {};

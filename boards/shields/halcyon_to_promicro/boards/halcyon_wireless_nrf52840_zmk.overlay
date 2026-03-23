@@ -80,28 +80,6 @@
     };
 };
 
-&i2c1 {
-    compatible = "nordic,nrf-twi";
-    pinctrl-0 = <&i2c1_default>;
-    pinctrl-1 = <&i2c1_sleep>;
-    pinctrl-names = "default", "sleep";
-};
-
-&spi1 {
-    compatible = "nordic,nrf-spim";
-    pinctrl-0 = <&spi1_default>;
-    pinctrl-1 = <&spi1_sleep>;
-    pinctrl-names = "default", "sleep";
-};
-
-&uart1 {
-    compatible = "nordic,nrf-uarte";
-    current-speed = <115200>;
-    pinctrl-0 = <&uart1_default>;
-    pinctrl-1 = <&uart1_sleep>;
-    pinctrl-names = "default", "sleep";
-};
-
 //RGB
 &spi2 {
     compatible = "nordic,nrf-spim";
@@ -126,11 +104,5 @@
         color-mapping = <LED_COLOR_ID_GREEN 
                 LED_COLOR_ID_RED 
                 LED_COLOR_ID_BLUE>;
-    };
-};
-
-/ {
-    chosen {
-        zmk,underglow = &led_strip;
     };
 };
