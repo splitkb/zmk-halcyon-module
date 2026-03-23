@@ -22,7 +22,7 @@
 		height = <100>;
 		spi-max-frequency = <4000000>;
 		reset-gpios = <&vik_conn 3 GPIO_ACTIVE_LOW>;
-		dc-gpios = <&vik_conn 0 GPIO_ACTIVE_HIGH>;
+		dc-gpios = <&vik_conn 0 GPIO_ACTIVE_LOW>;
 		busy-gpios = <&vik_conn 5 GPIO_ACTIVE_HIGH>;
 
 		full {
