@@ -11,6 +11,10 @@
     col-offset = <7>;
 };
 
+&halcyon_transform {
+    col-offset = <7>;
+};
+
 /*
 &right_soldered_encoder {
     status = "okay";
