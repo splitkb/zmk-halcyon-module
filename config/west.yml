@@ -2,10 +2,15 @@ manifest:
   remotes:
     - name: splitkb
       url-base: https://github.com/splitkb
+    - name: cirque-input-module
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
       remote: splitkb
-      revision: main+halcyon-fixes
+      revision: v0.3-branch+halcyon-fixes
       import: app/west.yml
+    - name: cirque-input-module
+      remote: cirque-input-module
+      revision: main
   self:
     path: config
