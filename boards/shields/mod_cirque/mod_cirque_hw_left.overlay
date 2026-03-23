@@ -8,7 +8,7 @@
 #include "mod_cirque_common.dtsi"
 
 &trackpad {
-    invert-x;
+    x-invert;
 };
 
 &trackpad_split {

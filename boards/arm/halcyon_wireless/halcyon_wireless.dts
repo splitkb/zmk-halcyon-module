@@ -30,6 +30,18 @@
             gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>;
         };
     };
+
+    EXT_POWER {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&halcyon_conn 32 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+
+    vik_sleep: vik_sleep_mgr {
+        compatible = "splitkb,vik-sleep";
+        status = "okay";
+        control-gpios = <&halcyon_conn 33 GPIO_ACTIVE_HIGH>; 
+    };
 };
 
 &adc {
@@ -72,14 +84,6 @@
 
 zephyr_udc0: &usbd {
     status = "okay";
-};
-
-&reg0 {
-    status = "okay";
-};
-
-&reg1 {
-    regulator-initial-mode = <NRF5X_REG_MODE_DCDC>;
 };
 
 &flash0 {

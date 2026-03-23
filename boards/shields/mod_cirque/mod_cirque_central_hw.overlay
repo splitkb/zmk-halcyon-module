@@ -7,7 +7,7 @@
 #include "mod_cirque_hw_common.dtsi"
 
 &trackpad {
-    invert-x;
+    x-invert;
 };
 
 &trackpad_listener {    

@@ -6,9 +6,11 @@
  
 / {
     vbatt: vbatt {
-        compatible = "voltage-divider";
+        compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 4>; // P0.28
-        power-on-sample-delay-us = <10000>;
+        // Not available in ZMK v0.3
+        // power-on-sample-delay-us = <10000>;
+        
         // The battery percentage is hardcoded for lipo batteries, so we need to adjust the
         // voltage divider to match the voltage range of a coin cell battery. Coincell is directly
         // connected to the ADC pin without divider. So we use a 1.4x multiplier.
