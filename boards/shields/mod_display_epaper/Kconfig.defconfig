@@ -29,7 +29,7 @@ config HEAP_MEM_POOL_SIZE
     default 1024
 
 config LV_Z_MEM_POOL_SIZE
-    default 8192
+    default 4096
 
 config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
     imply HALCYON_EPAPER_WIDGET_STATUS
@@ -37,7 +37,7 @@ config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
 config HALCYON_EPAPER_WIDGET_STATUS
     bool "Custom Halcyon epaper status widget"
     select LV_FONT_MONTSERRAT_16
-    select LV_USE_IMAGE
+    select LV_USE_IMG
     select LV_USE_CANVAS
 
 config HALCYON_EPAPER_WIDGET_INVERTED

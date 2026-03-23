@@ -40,17 +40,17 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
 
     // Fill background
-    canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_black_dsc);
+    lv_canvas_draw_rect(canvas, 0, 0, CANVAS_SIZE, CANVAS_SIZE, &rect_black_dsc);
 
     // Draw battery
     draw_battery(canvas, state);
 
     // Draw output status
-    canvas_draw_text(canvas, 0, 0, CANVAS_SIZE, &label_dsc,
-                     state->connected ? LV_SYMBOL_WIFI : LV_SYMBOL_CLOSE);
+    lv_canvas_draw_text(canvas, 0, 0, CANVAS_SIZE, &label_dsc,
+                        state->connected ? LV_SYMBOL_WIFI : LV_SYMBOL_CLOSE);
 
     // Rotate canvas
-    rotate_canvas(canvas);
+    rotate_canvas(canvas, cbuf);
 }
 
 static void set_battery_status(struct zmk_widget_status *widget,
@@ -111,10 +111,10 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_set_size(widget->obj, 184, 88);
     lv_obj_t *top = lv_canvas_create(widget->obj);
     lv_obj_align(top, LV_ALIGN_TOP_LEFT, 0, 0);
-    lv_canvas_set_buffer(top, widget->cbuf, CANVAS_SIZE, CANVAS_SIZE, CANVAS_COLOR_FORMAT);
+    lv_canvas_set_buffer(top, widget->cbuf, CANVAS_SIZE, CANVAS_SIZE, LV_IMG_CF_TRUE_COLOR);
 
     lv_obj_t *art = lv_img_create(widget->obj);
-    lv_image_set_src(art, &cat);
+    lv_img_set_src(art, &cat);
     lv_obj_align(art, LV_ALIGN_TOP_LEFT, 20, 0);
 
     sys_slist_append(&widgets, &widget->node);
