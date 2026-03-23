@@ -5,3 +5,4 @@ build:
     - zmk-driver-vik-sleep
   settings:
     board_root: .
+    dts_root: .
