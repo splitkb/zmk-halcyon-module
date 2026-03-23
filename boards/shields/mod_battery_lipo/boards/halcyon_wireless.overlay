@@ -6,10 +6,11 @@
  
 / {
     vbatt: vbatt {
-        compatible = "voltage-divider";
+        compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 6>; // P0.30
         power-gpios = <&gpio1 2 GPIO_ACTIVE_HIGH>;
-        power-on-sample-delay-us = <50000>;
+        // Not available in ZMK v0.3
+        // power-on-sample-delay-us = <50000>;
         output-ohms = <10000>;
         full-ohms = <30000>;
     };
@@ -30,20 +31,5 @@
         blink_interval_ms = <2000>;
         num_blinks = <20>;
         led = <&blue_led>;
-    };
-};
-
-&adc {
-    #address-cells = <1>;
-    #size-cells = <0>;
-    status = "okay";
-
-    channel@6 {
-        reg = <6>;
-        zephyr,gain = "ADC_GAIN_1_6";
-        zephyr,reference = "ADC_REF_INTERNAL";
-        zephyr,acquisition-time = <ADC_ACQ_TIME(ADC_ACQ_TIME_MICROSECONDS, 40)>;
-        zephyr,resolution = <12>;
-        zephyr,input-positive = <NRF_SAADC_AIN6>;
     };
 };
