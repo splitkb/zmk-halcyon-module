@@ -31,6 +31,7 @@ CONFIG_ZMK_BLE=y
 CONFIG_ZMK_USB=y
 CONFIG_ZMK_SLEEP=y
 CONFIG_ZMK_EXT_POWER_START=n
+CONFIG_ZMK_SLEEP_POWER_OFF_ON_SUSPEND_FAILURE=y
 
 # Make this large so the keyboard doesn't go in to 
 # idle (which can cause a display to refresh unnecessarily)
