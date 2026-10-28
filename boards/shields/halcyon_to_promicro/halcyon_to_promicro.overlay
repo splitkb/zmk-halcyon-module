@@ -54,6 +54,10 @@
         status = "disabled";
     };
 
+    kscan_composite: kscan_composite {
+	status = "disabled";
+    };
+
     kscan_halcyon: kscan_halcyon_0 {
         compatible = "zmk,kscan-gpio-direct";
         status = "disabled";
