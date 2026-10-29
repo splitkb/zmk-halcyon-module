@@ -1,8 +1,8 @@
 file_format: "1"
-id: halcyon_lily58
-name: splitkb.com Halcyon Lily58
+id: halcyon_sofle_v2
+name: splitkb.com Halcyon Sofle v2
 type: shield
-url: https://splitkb.com/products/halcyon-halcyon_lily58
+url: https://splitkb.com/products/halcyon-halcyon_sofle_v2
 requires: [halcyon_conn]
 exposes: [vik]
 features:
@@ -11,5 +11,5 @@ features:
   - underglow
   - studio
 siblings:
-  - halcyon_lily58_left
-  - halcyon_lily58_right
+  - halcyon_sofle_v2_left
+  - halcyon_sofle_v2_right

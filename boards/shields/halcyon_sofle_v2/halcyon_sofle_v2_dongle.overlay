@@ -4,21 +4,21 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "halcyon_lily58-layouts.dtsi"
+#include "halcyon_sofle_v2-layouts.dtsi"
 #include <dt-bindings/zmk/matrix_transform.h>
 
-&splitkb_halcyon_lily58 {
+&splitkb_halcyon_sofle_v2 {
     transform = <&default_transform>;
 };
 
-&splitkb_halcyon_lily58_hlc {
+&splitkb_halcyon_sofle_v2_hlc {
     transform = <&halcyon_transform>;
 };
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &splitkb_halcyon_lily58_hlc;
+        zmk,physical-layout = &splitkb_halcyon_sofle_v2_hlc;
     };
 
     mock_kscan: mock_kscan_0 {

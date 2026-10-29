@@ -2,16 +2,16 @@
 # Copyright (c) 2026 Splitkb.com
 # SPDX-License-Identifier: MIT
 
-config SHIELD_HALCYON_LILY58
+config SHIELD_HALCYON_SOFLE_V2
     bool
 
-config SHIELD_HALCYON_LILY58_LEFT
-    def_bool $(shields_list_contains,halcyon_lily58_left)
-    select SHIELD_HALCYON_LILY58
+config SHIELD_HALCYON_SOFLE_V2_LEFT
+    def_bool $(shields_list_contains,halcyon_sofle_v2_left)
+    select SHIELD_HALCYON_SOFLE_V2
 
-config SHIELD_HALCYON_LILY58_RIGHT
-    def_bool $(shields_list_contains,halcyon_lily58_right)
-    select SHIELD_HALCYON_LILY58
+config SHIELD_HALCYON_SOFLE_V2_RIGHT
+    def_bool $(shields_list_contains,halcyon_sofle_v2_right)
+    select SHIELD_HALCYON_SOFLE_V2
 
-config SHIELD_HALCYON_LILY58_DONGLE
-    def_bool $(shields_list_contains,halcyon_lily58_dongle)
+config SHIELD_HALCYON_SOFLE_V2_DONGLE
+    def_bool $(shields_list_contains,halcyon_sofle_v2_dongle)

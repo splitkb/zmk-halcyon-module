@@ -1,9 +1,9 @@
 #include <physical_layouts.dtsi>
 
 / {
-    splitkb_halcyon_lily58: splitkb_halcyon_lily58 {
+    splitkb_halcyon_sofle_v2: splitkb_halcyon_sofle_v2 {
         compatible = "zmk,physical-layout";
-        display-name = "Halcyon Lily58";
+        display-name = "Halcyon Sofle v2";
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   50       0     0     0>
@@ -67,9 +67,9 @@
             ;
     };
 
-    splitkb_halcyon_lily58_hlc: splitkb_halcyon_lily58_hlc {
+    splitkb_halcyon_sofle_v2_hlc: splitkb_halcyon_sofle_v2_hlc {
         compatible = "zmk,physical-layout";
-        display-name = "Halcyon Lily58";
+        display-name = "Halcyon Sofle v2";
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   50       0     0     0>

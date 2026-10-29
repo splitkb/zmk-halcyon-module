@@ -1,26 +1,26 @@
 
-if SHIELD_HALCYON_LILY58_LEFT
+if SHIELD_HALCYON_SOFLE_V2_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "Halcyon Lily58"
+    default "Halcyon SOFLE_V2"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_HALCYON_LILY58
+if SHIELD_HALCYON_SOFLE_V2
 
 config ZMK_SPLIT
     default y
 
 endif
 
-if SHIELD_HALCYON_LILY58_DONGLE
+if SHIELD_HALCYON_SOFLE_V2_DONGLE
 
 # Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
-    default "Halcyon Lily58"
+    default "Halcyon SOFLE_V2"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y

@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "halcyon_lily58.dtsi"
+#include "halcyon_sofle_v2.dtsi"
 
 / {
     kscan_matrix: kscan_matrix {
