@@ -1,0 +1,15 @@
+file_format: "1"
+id: halcyon_sofle_v2
+name: splitkb.com Halcyon Sofle v2
+type: shield
+url: https://splitkb.com/products/halcyon-halcyon_sofle_v2
+requires: [halcyon_conn]
+exposes: [vik]
+features:
+  - keys
+  - encoder
+  - underglow
+  - studio
+siblings:
+  - halcyon_sofle_v2_left
+  - halcyon_sofle_v2_right

@@ -37,6 +37,11 @@
             "name": "halcyon_lily58",
             "short_name": "halcyon_lily58",
             "split": "true"
+        },
+        {
+            "name": "halcyon_sofle_v2",
+            "short_name": "halcyon_sofle_v2",
+            "split": "true"
         }
     ],
     "battery_modules": [
