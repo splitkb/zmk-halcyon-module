@@ -7,8 +7,8 @@
         gpio-map-mask = <0xffffffff 0xffffffc0>;
         gpio-map-pass-thru = <0 0x3f>;
         gpio-map
-            = <0 0 &halcyon_conn 25 0> /* D0 */
-            , <1 0 &halcyon_conn 27 0> /* D1 */
+            = <1 0 &halcyon_conn 25 0> /* D1 */
+            , <0 0 &halcyon_conn 26 0> /* D0 */
             , <2 0 &halcyon_conn 9 0>  /* D2 */
             , <3 0 &halcyon_conn 8 0>  /* D3 */
             , <4 0 &halcyon_conn 10 0> /* D4/A6 */
