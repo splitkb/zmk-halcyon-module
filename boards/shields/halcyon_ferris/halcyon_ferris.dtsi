@@ -40,7 +40,7 @@
 
         halcyon {
             kscan = <&kscan_halcyon>;
-            row-offset = <3>;
+            row-offset = <4>;
         };
     };
 
